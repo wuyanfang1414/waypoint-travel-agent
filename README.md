@@ -42,6 +42,22 @@ python server.py --host 0.0.0.0
 
 服务会自动读取平台提供的 `PORT` 环境变量。公网部署后会得到一个 `https://...` 地址，手机和异地面试官都能访问。是否配置 `OPENAI_API_KEY` 不影响核心规划功能。
 
+### 完全免费且不绑定银行卡：GitHub Pages
+
+项目也包含纯浏览器规划引擎和 `.github/workflows/pages.yml`。在 GitHub 仓库中打开：
+
+```text
+Settings → Pages → Source → GitHub Actions
+```
+
+随后在 `Actions` 中运行 `Deploy Waypoint to GitHub Pages`，或重新提交一次代码。完成后网址为：
+
+```text
+https://<你的GitHub用户名>.github.io/waypoint-travel-agent/
+```
+
+GitHub Pages 版本不需要 Python、Render、OpenAI API Key 或银行卡。它在浏览器中执行同样的兴趣筛选、预算拆分、坐标路线优化、酒店档位和约束检查，并直接调用无需密钥的 Open-Meteo 16 日预报；日期超出预报范围或网络失败时自动回退到季节性提示。它不包含可选的 GPT-5 mini 文案增强。
+
 ## 项目目标
 
 ### 用户目标
