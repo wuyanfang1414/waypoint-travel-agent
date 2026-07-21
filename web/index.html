@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Waypoint - preference-aware travel planning agent">
+  <title>Waypoint Travel Agent</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Waypoint 首页"><span class="brand-symbol">W</span><span><strong>Waypoint</strong><small>Travel planning agent</small></span></a>
+    <nav aria-label="主导航">
+      <button class="nav-button" id="saved-button">已存方案 <b id="saved-count">0</b></button>
+      <button class="nav-button" id="method-button">项目设计</button>
+      <span class="mode-chip"><i></i><span id="mode-label">本地规划模式</span></span>
+    </nav>
+  </header>
+
+  <section class="panorama" aria-labelledby="page-title">
+    <div class="panorama-overlay"></div>
+    <div class="panorama-copy">
+      <span class="eyebrow">PREFERENCE-AWARE PLANNING</span>
+      <h1 id="page-title">把偏好变成一条走得通的路线</h1>
+      <p>预算、时间、兴趣与节奏共同参与规划，不用一张“热门榜单”应付所有人。</p>
+    </div>
+    <div class="panorama-facts">
+      <div><span>目的地知识库</span><strong id="city-count">5 城</strong></div>
+      <div><span>规划工具</span><strong>6 个</strong></div>
+      <div><span>硬约束</span><strong>预算 · 时间 · 去重</strong></div>
+    </div>
+  </section>
+
+  <main class="planner-shell">
+    <aside class="preference-panel">
+      <div class="panel-heading"><div><span>01</span><div><h2>旅行偏好</h2><p>全部预算按同行人总额填写</p></div></div><button id="reset-button" title="恢复示例偏好">重置</button></div>
+
+      <div class="form-grid two">
+        <label><span>从哪里出发</span><select id="origin"><option>上海</option><option>杭州</option><option>苏州</option><option>成都</option><option>北京</option></select></label>
+        <label><span>去哪里</span><select id="destination"></select></label>
+      </div>
+      <div class="form-grid two">
+        <label><span>出发日期</span><input id="start-date" type="date"></label>
+        <label><span>总预算</span><div class="money-input"><b>¥</b><input id="budget" type="number" min="300" step="100" value="3600"></div></label>
+      </div>
+
+      <div class="counter-row">
+        <span>旅行天数</span>
+        <div class="stepper"><button data-step="days" data-delta="-1" aria-label="减少一天">−</button><strong id="days-value">3</strong><span>天</span><button data-step="days" data-delta="1" aria-label="增加一天">＋</button></div>
+      </div>
+      <div class="counter-row">
+        <span>同行人数</span>
+        <div class="stepper"><button data-step="travelers" data-delta="-1" aria-label="减少一人">−</button><strong id="travelers-value">2</strong><span>人</span><button data-step="travelers" data-delta="1" aria-label="增加一人">＋</button></div>
+      </div>
+
+      <fieldset class="field-group">
+        <legend>感兴趣的体验</legend>
+        <div class="interest-grid" id="interest-grid">
+          <label><input type="checkbox" value="历史" checked><span>历史建筑</span></label>
+          <label><input type="checkbox" value="美食" checked><span>地方美食</span></label>
+          <label><input type="checkbox" value="摄影" checked><span>城市摄影</span></label>
+          <label><input type="checkbox" value="自然"><span>自然户外</span></label>
+          <label><input type="checkbox" value="艺术"><span>艺术设计</span></label>
+          <label><input type="checkbox" value="博物馆"><span>博物馆</span></label>
+          <label><input type="checkbox" value="亲子"><span>亲子体验</span></label>
+          <label><input type="checkbox" value="茶文化"><span>茶与慢生活</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend>旅行节奏</legend>
+        <div class="segmented" data-control="pace">
+          <button data-value="relaxed">松弛</button><button class="active" data-value="balanced">平衡</button><button data-value="packed">充实</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend>住宿偏好</legend>
+        <div class="segmented" data-control="hotel">
+          <button data-value="经济">经济</button><button class="active" data-value="舒适">舒适</button><button data-value="设计">设计感</button>
+        </div>
+      </fieldset>
+
+      <label class="select-row"><span>城际交通</span><select id="transport"><option value="smart">智能选择</option><option value="train">优先高铁</option><option value="flight">优先飞机</option><option value="low-carbon">低碳优先</option></select></label>
+      <label class="toggle-row"><span><strong>减少长时间步行</strong><small>降低徒步和超大景区权重</small></span><input id="accessibility" type="checkbox"><i></i></label>
+      <label class="notes-field"><span>补充要求</span><textarea id="notes" rows="3" placeholder="例如：不吃辣、喜欢早起、带长辈……"></textarea></label>
+
+      <button class="plan-button" id="plan-button"><span>生成旅行方案</span><b>→</b></button>
+      <p class="privacy-note">偏好默认只保存在当前浏览器；实时预订前需复核价格与房态。</p>
+    </aside>
+
+    <section class="result-panel">
+      <div class="result-topbar">
+        <div><span class="section-number">02</span><div><h2>可执行行程</h2><p id="result-state">等待偏好输入</p></div></div>
+        <div class="result-actions"><button id="save-plan" disabled>保存</button><button id="export-plan" disabled>导出 ↓</button></div>
+      </div>
+
+      <div class="empty-state" id="empty-state">
+        <div class="route-motif" aria-hidden="true"><span></span><i></i><span></span><i></i><span></span></div>
+        <h3>路线还没有出发</h3>
+        <p>设置偏好后，Agent 会调用目的地检索、预算分配、路线优化和约束检查工具。</p>
+        <button id="sample-button">使用杭州 3 日示例</button>
+      </div>
+
+      <div class="plan-result" id="plan-result" hidden>
+        <section class="plan-summary">
+          <div class="destination-title"><span id="date-range"></span><h2 id="destination-title"></h2><p id="plan-overview"></p></div>
+          <div class="health-score" id="health-score"><strong id="health-value">0</strong><span>预算健康度</span></div>
+        </section>
+        <div class="summary-metrics">
+          <div><span>规划总额</span><strong id="planned-budget"></strong><small id="target-budget"></small></div>
+          <div><span>住宿建议</span><strong id="hotel-summary"></strong><small id="hotel-total"></small></div>
+          <div><span>城际交通</span><strong id="transport-summary"></strong><small id="transport-cost"></small></div>
+          <div><span>天气来源</span><strong id="weather-summary"></strong><small id="weather-detail"></small></div>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="active" data-tab="itinerary">逐日行程</button>
+          <button data-tab="budget">预算检查</button>
+          <button data-tab="stay">酒店与交通</button>
+          <button data-tab="trace">Agent 轨迹</button>
+        </div>
+        <div class="tab-panel active" id="tab-itinerary"></div>
+        <div class="tab-panel" id="tab-budget"></div>
+        <div class="tab-panel" id="tab-stay"></div>
+        <div class="tab-panel" id="tab-trace"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="method-dialog">
+    <div class="dialog-header"><div><span>PROJECT RATIONALE</span><h2>为什么这样设计</h2></div><button class="close-dialog" aria-label="关闭">×</button></div>
+    <div class="method-grid">
+      <section><span>01 · 项目目标</span><h3>从“景点清单”升级为受约束的决策系统</h3><p>用户真正需要的不是更多推荐，而是在预算、天数、兴趣和体力之间做取舍，并知道方案为什么可行。</p></section>
+      <section><span>02 · 模型选择</span><h3>GPT-5 mini 负责理解，工具负责算账</h3><p>模型只用于偏好理解和说明文字；预算、路线、去重和强度由确定性 Python 工具计算，避免数字漂移。</p></section>
+      <section><span>03 · 数据集</span><h3>5 城结构化 POI 种子库</h3><p>每个景点含标签、片区、时长、票价、坐标和室内外属性；酒店与交通为规划参考区间，并明确提示复核。</p></section>
+      <section><span>04 · 用户思考</span><h3>把不确定性展示出来</h3><p>系统不会假装拥有实时房态。它区分“规划估算”和“可预订价格”，并给出天气来源、预算警告与替换优先级。</p></section>
+    </div>
+    <div class="architecture-strip"><code>Preferences → Search → Budget → Route → Weather → Validate → Compose</code></div>
+  </dialog>
+
+  <aside class="saved-drawer" id="saved-drawer" aria-label="已保存方案">
+    <div class="drawer-header"><div><span>SAVED PLANS</span><h2>方案库</h2></div><button id="close-drawer">×</button></div>
+    <div id="saved-list" class="saved-list"></div>
+  </aside>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="./planner.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

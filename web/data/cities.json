@@ -1,0 +1,144 @@
+{
+  "dataset": {
+    "name": "Waypoint Curated China City Seed",
+    "version": "1.0.0",
+    "updated": "2026-07-21",
+    "license": "Portfolio demo dataset",
+    "notice": "票价、酒店和交通价格仅用于规划估算，不构成实时预订报价。"
+  },
+  "cities": {
+    "shanghai": {
+      "name": "上海",
+      "center": [31.2304, 121.4737],
+      "summary": "城市建筑、当代艺术、江南街巷与大型主题乐园并存。",
+      "seasonal_tip": "夏季闷热多阵雨，建议将博物馆作为午后备选。",
+      "local_transport": {"name": "地铁 + 步行", "daily_per_person": 28, "tip": "核心城区地铁覆盖完善，跨江和远郊行程预留换乘时间。"},
+      "food_areas": {
+        "外滩": "四川中路与江西中路一带",
+        "人民广场": "云南南路与黄河路一带",
+        "徐汇": "衡山路—复兴路街区",
+        "西岸": "龙腾大道滨江沿线",
+        "虹口": "北外滩与四川北路",
+        "青浦": "朱家角古镇北大街"
+      },
+      "attractions": [
+        {"id":"bund","name":"外滩与万国建筑群","area":"外滩","tags":["城市","建筑","摄影","历史"],"duration":2.0,"price":0,"indoor":false,"priority":9.5,"coords":[31.2400,121.4900],"note":"建议清晨或日落前后步行，避开正午人流。"},
+        {"id":"yu-garden","name":"豫园与老城厢","area":"外滩","tags":["历史","园林","美食","摄影"],"duration":2.5,"price":40,"indoor":false,"priority":8.7,"coords":[31.2270,121.4920],"note":"园内与商城分开安排，避免在餐饮区停留过久。"},
+        {"id":"sh-museum","name":"上海博物馆人民广场馆","area":"人民广场","tags":["博物馆","历史","艺术","亲子"],"duration":3.0,"price":0,"indoor":true,"priority":9.0,"coords":[31.2290,121.4750],"note":"通常需要预约，适合作为高温或雨天方案。"},
+        {"id":"wukang","name":"武康路—安福路街区","area":"徐汇","tags":["城市","建筑","摄影","咖啡"],"duration":3.0,"price":0,"indoor":false,"priority":8.8,"coords":[31.2050,121.4380],"note":"以步行为主，减少频繁打车。"},
+        {"id":"west-bund","name":"西岸美术馆与滨江","area":"西岸","tags":["艺术","建筑","摄影","城市"],"duration":3.0,"price":80,"indoor":true,"priority":8.6,"coords":[31.1830,121.4630],"note":"展览票价按当期项目变化，滨江公共空间免费。"},
+        {"id":"m50","name":"M50创意园","area":"虹口","tags":["艺术","摄影","设计","城市"],"duration":2.0,"price":0,"indoor":true,"priority":7.8,"coords":[31.2490,121.4470],"note":"部分画廊周一闭馆。"},
+        {"id":"zhujiajiao","name":"朱家角古镇","area":"青浦","tags":["历史","自然","美食","摄影"],"duration":5.0,"price":80,"indoor":false,"priority":7.9,"coords":[31.1120,121.0560],"note":"往返市区约占半天，不建议与市中心景点混排。"},
+        {"id":"disney","name":"上海迪士尼度假区","area":"浦东远郊","tags":["主题乐园","亲子","娱乐"],"duration":10.0,"price":475,"indoor":false,"priority":8.5,"coords":[31.1440,121.6570],"note":"需要独立安排一整天，票价按日期浮动。"}
+      ],
+      "hotels": [
+        {"name":"锦江之星·人民广场店（参考）","district":"人民广场","tier":"经济","nightly":[280,380],"tags":["地铁便利","中心城区"],"note":"适合预算优先，名称与房价需在预订平台复核。"},
+        {"name":"上海外滩康铂酒店（参考）","district":"外滩","tier":"舒适","nightly":[420,620],"tags":["步行友好","夜景"],"note":"适合首次到访和外滩线路。"},
+        {"name":"上海徐家汇亚朵酒店（参考）","district":"徐汇","tier":"设计","nightly":[600,880],"tags":["街区体验","交通便利"],"note":"适合偏好城市漫步与设计感的用户。"}
+      ]
+    },
+    "hangzhou": {
+      "name": "杭州",
+      "center": [30.2741, 120.1551],
+      "summary": "湖山景观、茶文化、寺院与新旧街区适合慢节奏旅行。",
+      "seasonal_tip": "夏季西湖沿线湿热，清晨和傍晚更适合长距离步行。",
+      "local_transport": {"name":"地铁 + 公交 + 步行","daily_per_person":32,"tip":"西湖景区道路拥堵，优先公交和步行，灵隐区域尽量早到。"},
+      "food_areas": {"西湖":"湖滨与龙翔桥","灵隐":"天竺路","龙井":"梅家坞与龙井村","拱宸桥":"小河直街与桥西","良渚":"玉鸟集","西溪":"蒋村慢生活街区"},
+      "attractions": [
+        {"id":"west-lake","name":"西湖环湖精选段","area":"西湖","tags":["自然","摄影","城市","历史"],"duration":4.0,"price":0,"indoor":false,"priority":10.0,"coords":[30.2470,120.1450],"note":"不必完整绕湖，建议断桥—孤山或花港—苏堤二选一。"},
+        {"id":"lingyin","name":"灵隐寺与飞来峰","area":"灵隐","tags":["历史","建筑","自然","文化"],"duration":4.0,"price":75,"indoor":false,"priority":9.1,"coords":[30.2400,120.1020],"note":"早到可减少排队和交通拥堵。"},
+        {"id":"longjing","name":"龙井村与九溪短线","area":"龙井","tags":["自然","徒步","茶文化","摄影"],"duration":4.0,"price":0,"indoor":false,"priority":8.8,"coords":[30.2140,120.1110],"note":"雨后石阶湿滑，穿防滑鞋。"},
+        {"id":"tea-museum","name":"中国茶叶博物馆","area":"龙井","tags":["博物馆","茶文化","设计","亲子"],"duration":2.5,"price":0,"indoor":true,"priority":8.2,"coords":[30.2230,120.1160],"note":"馆区分散，提前确认开放馆区。"},
+        {"id":"xiaohe","name":"小河直街与桥西历史街区","area":"拱宸桥","tags":["历史","摄影","城市","美食"],"duration":3.0,"price":0,"indoor":false,"priority":8.3,"coords":[30.3150,120.1420],"note":"适合傍晚到夜间的街区漫步。"},
+        {"id":"liangzhu","name":"良渚博物院","area":"良渚","tags":["博物馆","历史","建筑","亲子"],"duration":3.0,"price":0,"indoor":true,"priority":8.5,"coords":[30.3910,120.0340],"note":"距离市中心较远，建议和良渚文化村组合。"},
+        {"id":"xixi","name":"西溪国家湿地公园","area":"西溪","tags":["自然","摄影","亲子"],"duration":5.0,"price":80,"indoor":false,"priority":7.8,"coords":[30.2690,120.0630],"note":"选择一个入口深度游，避免在园区内往返。"},
+        {"id":"songcheng","name":"宋城演艺（可选）","area":"之江","tags":["演出","亲子","娱乐"],"duration":4.0,"price":320,"indoor":true,"priority":6.8,"coords":[30.1710,120.0830],"note":"预算敏感时可跳过，演出时间需另行确认。"}
+      ],
+      "hotels": [
+        {"name":"汉庭杭州西湖解放路店（参考）","district":"湖滨","tier":"经济","nightly":[260,380],"tags":["地铁便利","靠近西湖"],"note":"适合预算优先和首次到访。"},
+        {"name":"杭州湖滨君亭酒店（参考）","district":"湖滨","tier":"舒适","nightly":[480,680],"tags":["步行友好","湖滨商圈"],"note":"适合两到三天经典线路。"},
+        {"name":"杭州西溪亚朵酒店（参考）","district":"西溪","tier":"设计","nightly":[560,820],"tags":["安静","自然"],"note":"适合偏好自然和慢节奏的用户。"}
+      ]
+    },
+    "suzhou": {
+      "name":"苏州",
+      "center":[31.2989,120.5853],
+      "summary":"古典园林、博物馆、运河街巷与现代湖区距离紧凑。",
+      "seasonal_tip":"园林旺季需预约，上午先排热门园林，下午转室内博物馆。",
+      "local_transport":{"name":"地铁 + 公交 + 步行","daily_per_person":24,"tip":"古城内步行体验更好，网约车在窄街容易绕行。"},
+      "food_areas":{"东北街":"平江路与临顿路","平江路":"平江路中段","山塘街":"广济路与山塘街","虎丘":"虎丘路","金鸡湖":"苏州中心与月光码头"},
+      "attractions":[
+        {"id":"humble","name":"拙政园","area":"东北街","tags":["园林","历史","摄影","建筑"],"duration":2.5,"price":80,"indoor":false,"priority":9.6,"coords":[31.3240,120.6290],"note":"建议开园时进入，降低拥挤影响。"},
+        {"id":"suzhou-museum","name":"苏州博物馆本馆","area":"东北街","tags":["博物馆","建筑","历史","设计"],"duration":2.5,"price":0,"indoor":true,"priority":9.5,"coords":[31.3240,120.6270],"note":"需要预约，与拙政园步行组合。"},
+        {"id":"pingjiang","name":"平江路历史街区","area":"平江路","tags":["历史","美食","摄影","城市"],"duration":3.0,"price":0,"indoor":false,"priority":9.0,"coords":[31.3110,120.6310],"note":"主街拥挤时可转入支巷。"},
+        {"id":"master-nets","name":"网师园","area":"古城南","tags":["园林","建筑","历史"],"duration":1.8,"price":40,"indoor":false,"priority":8.4,"coords":[31.2960,120.6290],"note":"体量较小，适合与古城南部街区组合。"},
+        {"id":"tiger-hill","name":"虎丘","area":"虎丘","tags":["历史","自然","摄影"],"duration":3.0,"price":70,"indoor":false,"priority":8.3,"coords":[31.3390,120.5750],"note":"与山塘街可形成一条西北方向线路。"},
+        {"id":"shantang","name":"山塘街","area":"山塘街","tags":["历史","夜景","美食","摄影"],"duration":2.5,"price":0,"indoor":false,"priority":8.6,"coords":[31.3150,120.6030],"note":"傍晚比白天更有氛围。"},
+        {"id":"jinji","name":"金鸡湖步道","area":"金鸡湖","tags":["城市","建筑","夜景","摄影"],"duration":3.0,"price":0,"indoor":false,"priority":7.8,"coords":[31.3180,120.6990],"note":"适合最后一晚，和古城体验形成对比。"},
+        {"id":"eslite","name":"诚品生活苏州","area":"金鸡湖","tags":["设计","书店","城市","亲子"],"duration":2.0,"price":0,"indoor":true,"priority":7.2,"coords":[31.3250,120.7130],"note":"适合雨天和晚间。"}
+      ],
+      "hotels":[
+        {"name":"如家精选苏州观前街店（参考）","district":"观前街","tier":"经济","nightly":[240,360],"tags":["古城中心","地铁便利"],"note":"适合控制预算。"},
+        {"name":"苏州平江华府精品酒店（参考）","district":"平江路","tier":"舒适","nightly":[460,680],"tags":["园林氛围","步行友好"],"note":"适合园林和街巷主题。"},
+        {"name":"苏州金鸡湖亚朵酒店（参考）","district":"金鸡湖","tier":"设计","nightly":[560,800],"tags":["现代城市","交通便利"],"note":"适合偏好现代设施的用户。"}
+      ]
+    },
+    "chengdu": {
+      "name":"成都",
+      "center":[30.5728,104.0668],
+      "summary":"熊猫、茶馆、川味饮食、历史文化与创意街区节奏松弛。",
+      "seasonal_tip":"夏季湿热且可能阵雨，上午安排户外，下午安排博物馆或茶馆。",
+      "local_transport":{"name":"地铁 + 网约车","daily_per_person":38,"tip":"熊猫基地建议早出发，市中心景点可地铁衔接。"},
+      "food_areas":{"熊猫基地":"建设路与动物园周边","武侯祠":"玉林与芳草街","人民公园":"少城路与奎星楼","浣花溪":"青羊宫与杜甫草堂周边","东郊记忆":"建设路","宽窄巷子":"奎星楼街"},
+      "attractions":[
+        {"id":"panda","name":"成都大熊猫繁育研究基地","area":"熊猫基地","tags":["亲子","动物","摄影","自然"],"duration":5.0,"price":55,"indoor":false,"priority":9.8,"coords":[30.7390,104.1420],"note":"尽量开园入场，熊猫上午更活跃。"},
+        {"id":"wuhou","name":"武侯祠","area":"武侯祠","tags":["历史","建筑","文化"],"duration":2.5,"price":50,"indoor":false,"priority":8.7,"coords":[30.6450,104.0470],"note":"可与锦里连走，但商业街停留不宜过长。"},
+        {"id":"jinli","name":"锦里古街","area":"武侯祠","tags":["美食","夜景","摄影"],"duration":1.8,"price":0,"indoor":false,"priority":7.6,"coords":[30.6450,104.0480],"note":"傍晚更有氛围。"},
+        {"id":"sichuan-museum","name":"四川博物院","area":"浣花溪","tags":["博物馆","历史","艺术","亲子"],"duration":3.0,"price":0,"indoor":true,"priority":8.8,"coords":[30.6590,104.0280],"note":"通常需要预约。"},
+        {"id":"dufu","name":"杜甫草堂","area":"浣花溪","tags":["历史","园林","文学","摄影"],"duration":2.5,"price":50,"indoor":false,"priority":8.5,"coords":[30.6610,104.0290],"note":"和四川博物院距离近。"},
+        {"id":"peoples-park","name":"人民公园与鹤鸣茶社","area":"人民公园","tags":["茶文化","城市","美食","休闲"],"duration":2.5,"price":30,"indoor":false,"priority":9.0,"coords":[30.6570,104.0550],"note":"茶水价格按现场消费估算。"},
+        {"id":"eastern-memory","name":"东郊记忆","area":"东郊记忆","tags":["艺术","设计","摄影","城市"],"duration":3.0,"price":0,"indoor":false,"priority":7.9,"coords":[30.6710,104.1240],"note":"适合年轻用户和夜间活动。"},
+        {"id":"kuanzhai","name":"宽窄巷子支巷漫步","area":"宽窄巷子","tags":["历史","美食","摄影","城市"],"duration":2.0,"price":0,"indoor":false,"priority":7.7,"coords":[30.6690,104.0590],"note":"主街商业化较强，可将重点放在周边支巷。"}
+      ],
+      "hotels":[
+        {"name":"汉庭成都天府广场店（参考）","district":"天府广场","tier":"经济","nightly":[220,340],"tags":["地铁便利","中心城区"],"note":"适合首次到访和预算优先。"},
+        {"name":"成都宽窄巷子美居酒店（参考）","district":"少城","tier":"舒适","nightly":[420,620],"tags":["茶馆街区","步行友好"],"note":"适合慢节奏文化线路。"},
+        {"name":"成都太古里亚朵S酒店（参考）","district":"春熙路","tier":"设计","nightly":[620,900],"tags":["设计感","夜生活"],"note":"适合城市体验和餐饮优先。"}
+      ]
+    },
+    "beijing": {
+      "name":"北京",
+      "center":[39.9042,116.4074],
+      "summary":"皇家建筑、国家级博物馆、胡同与当代艺术，景点尺度大。",
+      "seasonal_tip":"景点距离和安检时间不可低估，热门场馆必须提前预约。",
+      "local_transport":{"name":"地铁 + 公交","daily_per_person":32,"tip":"尽量按片区安排，跨城移动会显著消耗时间。"},
+      "food_areas":{"故宫":"王府井与东四","天坛":"鲜鱼口与磁器口","颐和园":"中关村与海淀黄庄","798":"酒仙桥","胡同":"鼓楼与雍和宫","长城":"前门与德胜门交通集散区"},
+      "attractions":[
+        {"id":"forbidden","name":"故宫博物院","area":"故宫","tags":["历史","建筑","博物馆","摄影"],"duration":5.0,"price":60,"indoor":false,"priority":10.0,"coords":[39.9160,116.3970],"note":"必须预约，建议沿中轴线后选择一条侧线。"},
+        {"id":"national-museum","name":"中国国家博物馆","area":"故宫","tags":["博物馆","历史","艺术","亲子"],"duration":4.0,"price":0,"indoor":true,"priority":9.2,"coords":[39.9030,116.4020],"note":"安检和入场需要预留时间。"},
+        {"id":"temple-heaven","name":"天坛公园","area":"天坛","tags":["历史","建筑","摄影","公园"],"duration":3.0,"price":34,"indoor":false,"priority":9.0,"coords":[39.8820,116.4070],"note":"清晨能看到本地居民活动。"},
+        {"id":"summer-palace","name":"颐和园","area":"颐和园","tags":["历史","园林","自然","摄影"],"duration":5.0,"price":30,"indoor":false,"priority":9.1,"coords":[39.9990,116.2750],"note":"园区很大，只选东宫门—长廊—石舫核心线。"},
+        {"id":"capital-museum","name":"首都博物馆","area":"西城","tags":["博物馆","历史","亲子"],"duration":3.0,"price":0,"indoor":true,"priority":8.0,"coords":[39.9050,116.3420],"note":"适合作为雨天替代。"},
+        {"id":"798","name":"798艺术区","area":"798","tags":["艺术","设计","摄影","城市"],"duration":4.0,"price":0,"indoor":false,"priority":8.3,"coords":[39.9840,116.4960],"note":"展馆开放时间不一。"},
+        {"id":"hutong","name":"鼓楼—什刹海胡同线","area":"胡同","tags":["历史","城市","美食","摄影"],"duration":3.5,"price":0,"indoor":false,"priority":8.8,"coords":[39.9400,116.3960],"note":"建议步行或骑行，避免只停留商业主街。"},
+        {"id":"great-wall","name":"慕田峪长城","area":"长城","tags":["历史","自然","徒步","摄影"],"duration":8.0,"price":80,"indoor":false,"priority":9.4,"coords":[40.4310,116.5700],"note":"含往返交通需独立安排一整天。"}
+      ],
+      "hotels":[
+        {"name":"如家精选北京前门店（参考）","district":"前门","tier":"经济","nightly":[320,460],"tags":["中轴线","地铁便利"],"note":"旺季价格波动明显。"},
+        {"name":"北京东四胡同亚朵酒店（参考）","district":"东四","tier":"舒适","nightly":[520,760],"tags":["胡同体验","交通便利"],"note":"适合故宫与胡同线路。"},
+        {"name":"北京三里屯CHAO周边设计酒店（参考）","district":"三里屯","tier":"设计","nightly":[780,1200],"tags":["设计感","夜生活"],"note":"仅作档位示例，实际酒店与报价需复核。"}
+      ]
+    }
+  },
+  "connections": {
+    "上海-杭州":[{"mode":"高铁","duration":"45–60分钟","one_way":[73,95],"hub":"上海虹桥 → 杭州东","carbon":"低"},{"mode":"自驾","duration":"约2.5小时","one_way":[180,260],"hub":"市区 → 市区","carbon":"高"}],
+    "杭州-上海":[{"mode":"高铁","duration":"45–60分钟","one_way":[73,95],"hub":"杭州东 → 上海虹桥","carbon":"低"}],
+    "上海-苏州":[{"mode":"高铁","duration":"25–40分钟","one_way":[40,55],"hub":"上海站/虹桥 → 苏州站","carbon":"低"},{"mode":"自驾","duration":"约2小时","one_way":[120,190],"hub":"市区 → 市区","carbon":"高"}],
+    "苏州-上海":[{"mode":"高铁","duration":"25–40分钟","one_way":[40,55],"hub":"苏州站 → 上海站/虹桥","carbon":"低"}],
+    "上海-成都":[{"mode":"飞机","duration":"约3.5小时","one_way":[650,1300],"hub":"虹桥/浦东 → 双流/天府","carbon":"高"},{"mode":"高铁","duration":"约12小时","one_way":[690,900],"hub":"上海虹桥 → 成都东","carbon":"低"}],
+    "成都-上海":[{"mode":"飞机","duration":"约3.5小时","one_way":[650,1300],"hub":"双流/天府 → 虹桥/浦东","carbon":"高"}],
+    "上海-北京":[{"mode":"高铁","duration":"约4.5–6小时","one_way":[553,662],"hub":"上海虹桥 → 北京南","carbon":"低"},{"mode":"飞机","duration":"约2.5小时","one_way":[700,1500],"hub":"虹桥/浦东 → 首都/大兴","carbon":"高"}],
+    "北京-上海":[{"mode":"高铁","duration":"约4.5–6小时","one_way":[553,662],"hub":"北京南 → 上海虹桥","carbon":"低"}]
+  }
+}
+
